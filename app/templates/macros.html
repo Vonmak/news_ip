@@ -1,0 +1,22 @@
+{%macro displaySourceList(sourceList) %} {%for source in sourceList %}
+
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 block">
+  <h4 style="color: blue">{{ source.name}}</h4>
+  <p>{{source.description}}</p>
+  <a href="{{source.url}}" class="btn btn-warning btn-sm"
+    >More on {{source.name}}</a
+  >
+</div>
+{%endfor%} {% endmacro %} {% macro displayNewsList(news_list) %} {% for news in
+news_list %}
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 bg bg-secondary news-card">
+  <img src="{{ news.urlToImage }}" alt="image" class="img-responsive" />
+  <div class="text-center">
+    <p>Written by: {{news.author}}</p>
+    <p>{{news.title|truncate(30)}}</p>
+    <p>Published On: <em>{{news.publishedAt|truncate(13)}}</em></p>
+    <a href="{{news.url}}" class="btn btn-warning btn-sm"> Click for More</a>
+  </div>
+</div>
+
+{% endfor %} {% endmacro %}
