@@ -14,25 +14,25 @@ def configure_request(app):
     base_url = app.config['NEWS_API_BASE_URL']
     source_url = app.config['SOURCE_BASE_URL']
 
-# def get_sources():
-#     '''
-#     Function that gets the json response to our url request
-#     '''
+def get_sources():
+    '''
+    Function that gets the json response to our url request
+    '''
 
-#     get_sourceurl=source_url.format(api_key)
-#     with urllib.request.urlopen(get_sourceurl) as url:
-#         get_sources_data=url.read()
-#         get_sources_response=json.loads(get_sources_data)
+    get_sourceurl=source_url.format(api_key)
+    with urllib.request.urlopen(get_sourceurl) as url:
+        get_sources_data=url.read()
+        get_sources_response=json.loads(get_sources_data)
 
-#         source_results=None 
+        source_results=None 
 
-#         if get_sources_response['sources']:
-#             source_result_list=get_sources_response['sources']
-#             source_results=process_results(source_result_list)
+        if get_sources_response['sources']:
+            source_result_list=get_sources_response['sources']
+            source_results=process_results(source_result_list)
 
 
 
-#     return source_results
+    return source_results
 
 
 # def process_results(source_list):
