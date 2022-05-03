@@ -35,26 +35,26 @@ def get_sources():
     return source_results
 
 
-# def process_results(source_list):
-#     '''
-#     Function  that processes the source result and transform them to a list of Objects
-#     Args:
-#         source_list: A list of dictionaries that contain source details
-#     Returns :
-#         source_results: A list of source objects
-#     '''
-#     source_results= []
+def process_results(source_list):
+    '''
+    Function  that processes the source result and transform them to a list of Objects
+    Args:
+        source_list: A list of dictionaries that contain source details
+    Returns :
+        source_results: A list of source objects
+    '''
+    source_results= []
 
-#     for source_items in source_list:
-#         id=source_items.get('id')
-#         name=source_items.get('name')
-#         url=source_items.get('url')
+    for source_items in source_list:
+        id=source_items.get('id')
+        name=source_items.get('name')
+        url=source_items.get('url')
         
-#         new_source=Source(id,name,url)
+        new_source=Source(id,name,url)
 
-#         source_results.append(new_source)
+        source_results.append(new_source)
 
-#     return source_results
+    return source_results
 
 
 # def get_articles(category):
