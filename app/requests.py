@@ -104,23 +104,23 @@ def process_articles(news_list):
 
     return news_articles
 
-# def get_article(title):
-#     get_news_details_url = base_url.format(title,api_key)
+def get_article(title):
+    get_news_details_url = base_url.format(title,api_key)
 
-#     with urllib.request.urlopen(get_news_details_url) as url:
-#         news_details_data = url.read()
-#         news_details_response = json.loads(news_details_data)
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
 
-#         news_object = None
-#         if news_details_response:
-#             title = news_details_response.get('title')
-#             author = news_details_response.get('author')
-#             description = news_details_response.get('description')
-#             content = news_details_response.get('content')
-#             url = news_details_response.get('url')
-#             urlToImage = news_details_response.get('urlToImage')
+        news_object = None
+        if news_details_response:
+            title = news_details_response.get('title')
+            author = news_details_response.get('author')
+            description = news_details_response.get('description')
+            content = news_details_response.get('content')
+            url = news_details_response.get('url')
+            urlToImage = news_details_response.get('urlToImage')
 
-#             news_object = News(title,author,description,content,url, urlToImage)
+            news_object = News(title,author,description,content,url, urlToImage)
 
-#     return news_object
+    return news_object
 
