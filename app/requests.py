@@ -76,33 +76,33 @@ def get_articles(category):
 
     return news_articles
 
-# def process_articles(news_list):
-#     '''
-#     Function  that processes the news articles and transform them to a list of Objects
+def process_articles(news_list):
+    '''
+    Function  that processes the news articles and transform them to a list of Objects
 
-#     Args:
-#         news_list: A list of dictionaries that contain news details
+    Args:
+        news_list: A list of dictionaries that contain news details
 
-#     Returns :
-#         news_articles: A list of news objects
-#     '''
-#     news_articles = []
-#     for news_item in news_list:
+    Returns :
+        news_articles: A list of news objects
+    '''
+    news_articles = []
+    for news_item in news_list:
         
-#         title = news_item.get('title')
-#         author = news_item.get('author')
-#         description = news_item.get('description')
-#         content = news_item.get('content')
-#         url = news_item.get('url')
-#         urlToImage = news_item.get('urlToImage')
-#         publishedAt = news_item.get("publishedAt")
+        title = news_item.get('title')
+        author = news_item.get('author')
+        description = news_item.get('description')
+        content = news_item.get('content')
+        url = news_item.get('url')
+        urlToImage = news_item.get('urlToImage')
+        publishedAt = news_item.get("publishedAt")
         
 
        
-#         news_object = News(title, author, description, content, url, urlToImage, publishedAt)
-#         news_articles.append(news_object)
+        news_object = News(title, author, description, content, url, urlToImage, publishedAt)
+        news_articles.append(news_object)
 
-#     return news_articles
+    return news_articles
 
 # def get_article(title):
 #     get_news_details_url = base_url.format(title,api_key)
