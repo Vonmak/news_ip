@@ -9,17 +9,18 @@ source_url = None
 base_url = None
 
 def configure_request(app):
-    global api_key, base_url, source_url
+    global api_key,source_url, base_url
     api_key = app.config['NEWS_API_KEY']
-    base_url = app.config['NEWS_API_BASE_URL']
     source_url = app.config['SOURCE_BASE_URL']
+    base_url = app.config['NEWS_API_BASE_URL']
+   
 
 def get_sources():
     '''
     Function that gets the json response to our url request
     '''
 
-    get_sourceurl=source_url.format(api_key)
+    get_sourceurl = source_url.format(api_key)
     with urllib.request.urlopen(get_sourceurl) as url:
         get_sources_data=url.read()
         get_sources_response=json.loads(get_sources_data)
@@ -62,7 +63,6 @@ def get_articles(category):
     Function that gets the json response to our url request
     '''
     get_news_url = base_url.format(category,api_key)
-    # get_news_url=base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -104,23 +104,4 @@ def process_articles(news_list):
 
     return news_articles
 
-def get_article(title):
-    get_news_details_url = base_url.format(title,api_key)
-
-    with urllib.request.urlopen(get_news_details_url) as url:
-        news_details_data = url.read()
-        news_details_response = json.loads(news_details_data)
-
-        news_object = None
-        if news_details_response:
-            title = news_details_response.get('title')
-            author = news_details_response.get('author')
-            description = news_details_response.get('description')
-            content = news_details_response.get('content')
-            url = news_details_response.get('url')
-            urlToImage = news_details_response.get('urlToImage')
-
-            news_object = News(title,author,description,content,url, urlToImage)
-
-    return news_object
 
