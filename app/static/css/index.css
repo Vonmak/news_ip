@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+.index{
+    height: 93vh;
+    background: linear-gradient(#124559,#1f78a4,#00b4d8); 
+    overflow: scroll;
+    text-align: center;
+}
+h1{
+    color: #90e0ef;
+    font-size: xx-large;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-decoration: underline;
+}
