@@ -4,8 +4,9 @@
 {% block styles%} {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename ='css/index.css')}}" />
 {% endblock %}
+
 <div class="container-fluid index">
-  <h1>Business News</h1>
-  <div>{{ macro.displayNewsList(business)}}</div>
+  <h1>Science Oriented News</h1>
+  <div>{{ macro.displayNewsList(science)}}</div>
 </div>
 {%endblock%}
