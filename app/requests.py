@@ -3,9 +3,8 @@ from .models import News, Source
 
 # Getting api key
 api_key = None
-# Getting the sources base url
+# Getting the  base urls
 source_url = None
-# Getting the articles base url
 base_url = None
 
 def configure_request(app):
@@ -21,6 +20,7 @@ def get_sources():
     '''
 
     get_sourceurl = source_url.format(api_key)
+    
     with urllib.request.urlopen(get_sourceurl) as url:
         get_sources_data=url.read()
         get_sources_response=json.loads(get_sources_data)
@@ -103,5 +103,3 @@ def process_articles(news_list):
         news_articles.append(news_object)
 
     return news_articles
-
-
